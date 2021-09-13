@@ -2,6 +2,8 @@ import React from 'react';
 import { useHistory } from 'react-router-dom'
 import InactiveIcon from '../assets/static/Icon_dissable.png'
 import ActiveIcon  from '../assets/static/Icon_done.png'
+import GoBack from '../assets/static/icon_Back.png'
+import Guy from '../assets/static/Guy.png'
 import Button from '../common/Button';
 import '../assets/styles/pages/Plan.scss'
 
@@ -16,25 +18,33 @@ const Plan = () => {
           <div className='plan-box__left'>
             <div className='plan-box__left--steps'>
             <img src={InactiveIcon} alt='inactive' />
-            <p className='plan-box__left--steps-'>Datos</p>
+            <p className='plan-box__left--steps--data1'>Datos</p>
             </div>
             <div className='plan-box__left--steps'>
             <img src={ActiveIcon} alt='active' />
-              <p>Arma tu plan</p>
+              <p className='plan-box__left--steps--data2'>Arma tu plan</p>
             </div>
           </div>
 
         <div className='plan-box__center'>
-            <p>
-              Volver
-            </p>
-            <div>
-              <p>Hola, Juan!</p>
-              <p>Conoce las coberturas para tu plan</p>
+            <div className='plan-box__center--goback'>
+              <img src={GoBack} alt='goback' />
+              <p className='plan-box__center--goback--turnback'>VOLVER</p>
             </div>
-            <div>
+            <div className='plan-box__center--title'>
+              <p className='plan-box__center--title--main'>Hola, <span>¡Juan!</span> </p>
+              <p className='plan-box__center--title--secon'>Conoce las coberturas para tu plan</p>
+            </div>
+            <div className='plan-box__center--container'>
+              <div>
               <p>placa:C2U-114</p>
               <h3>Marca y modelo</h3>
+              </div>
+              <div>
+                <img src={Guy} alt='guy' />
+              </div>
+
+              
             </div>
           <div>
             <div>
