@@ -1,34 +1,62 @@
 .form{
   height:450px;
   width: 288px;
+  &__first-container{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    &--dropwdown{
+      background-color: white;
+      width: 100%;
+      border: 1px solid #C5CBE0;
+      position: relative;
+      grid-column: 1/4;
+      height: 54px;
+        &--float{
+          position: absolute;
+          z-index: 2;
+          top: 60%;
+          background-color: white;
+          width: 100%;
+        }
+      }
+      &--input{
+        grid-column: 4/11;
+        .form__input{
+          width: 100%;
+        }
+      }
+      &--dropwdown{
+        grid-column: 1/4;
+      }
+    }
+    &__input{
+      background: #FFFFFF;
+      border: 1px solid #C5CBE0;
+      box-sizing: border-box;
+      border-radius: 4px;
+      padding: 16px;
+      width: 288px;
+      height: 56px;
+      }
+      &__termsandconditions{
+        display: flex;
+        align-items: center;
+      }
+      &__termsandconditions--description{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: #676F8F;
+        margin-left: 12px ;
+        }
 }
 
-.form__input{
-background: #FFFFFF;
-border: 1px solid #C5CBE0;
-box-sizing: border-box;
-border-radius: 4px;
-padding: 16px;
-width: 288px;
-height: 56px;
-}
 
-.form__termsandconditions{
-display: flex;
-align-items: center;
-}
 
-.form__termsandconditions--checkbox{
-  background-color: #43B748;
-}
 
-.form__termsandconditions--description{
-font-family: Roboto;
-font-style: normal;
-font-weight: 300;
-font-size: 12px;
-line-height: 20px;
-letter-spacing: 0.2px;
-color: #676F8F;
-margin-left: 12px ;
-}
+
+
+

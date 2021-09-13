@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import Button from '../common/Button';
 import '../assets/styles/components/FormHome.scss'
 import { useHistory } from 'react-router-dom'
-
+const items = [
+  'DNI',
+  'PASS',
+  'CE'
+]
 const Formulario = () => {
   const [id, setId] = useState('')
   const [idError, setIdError] = useState('')
@@ -11,7 +15,7 @@ const Formulario = () => {
   const [license, setLicense] = useState('')
   const [licenseError, setLicenseError] = useState('')
   const [dropdown, setDropdown] = useState(false)
-  const [type, setType] = useState('')
+  const [type, setType] = useState(items[0])
   const history = useHistory()
   function iraplan () {
     history.push('/plan')
@@ -62,11 +66,34 @@ const Formulario = () => {
     }
     return true
   }
+
+  const handleType = (item:string) => {
+    setType(item)
+    setDropdown(!dropdown)
+  }
   return (
     <div className='form'>
       <form onSubmit={onSubmit}>
-        <input type='text' className="form__input" onChange={handleId} placeholder='Nro. de doc'/>
-        <p style={{color: 'red'}}>{(idError !== '') && idError}</p>
+        <div className='form__first-container'>
+          <div className='form__first-container--dropwdown'>
+            <p onClick={() =>setDropdown(!dropdown)}>{type}</p>
+            {
+              dropdown &&
+              <div className='form__first-container--dropwdown--float'>
+                {
+                  items.map(item => (
+                    <p onClick={()=> handleType(item)} key={item}>{item}</p>
+                  ))
+                }
+              </div>
+            }
+          </div>
+          <div className='form__first-container--input'>
+            <input type='text' className="form__input" onChange={handleId} placeholder='Nro. de doc'/>
+            <p style={{color: 'red'}}>{(idError !== '') && idError}</p>
+
+          </div>
+        </div>
         <input type='text' className="form__input" onChange={handlePhone} placeholder='Celular' />
         <p style={{color: 'red'}}>{phoneError !== '' && phoneError}</p>
         <input type='text' className="form__input" onChange={handleLicense} placeholder='Placa' />

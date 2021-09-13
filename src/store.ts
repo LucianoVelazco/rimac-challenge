@@ -1,6 +1,10 @@
-const store:any = {
+interface storeInterface {
+  user:any
+}
+
+const store: storeInterface = {
   user:{
-    email:'',
+    email:'hola',
     name:''
   }
 }

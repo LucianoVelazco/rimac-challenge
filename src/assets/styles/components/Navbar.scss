@@ -7,6 +7,17 @@
   z-index: 1;
 }
 
+.navbar__second{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  background-color: white;
+  z-index: 1;
+  
+}
+
+
 .navbar__logo{
   width: 99px;
   height: 16px;
@@ -33,11 +44,3 @@
   }
 }
 
-.navbar__second{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  position: absolute;
-  background-color: white;
-  z-index: 1;
-}

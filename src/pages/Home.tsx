@@ -4,11 +4,14 @@ import Navbar  from '../components/Navbar'
 import Formulario from '../components/FormHome'
 import axios from 'axios'
 import Girl from '../assets/static/Carnandgirl.png'
-import { useUserContext } from '../context';
-
+import { useSelector, useDispatch } from 'react-redux';
+import * as actions from '../redux/actions';
 const Home = () => {
-  const {handleUser,user}:any  = useUserContext()
+  const dispatch = useDispatch()
+  const user = useSelector((state: {user: any}) => state.user)
+  // const {handleUser,user}:any  = useUserContext()
    const API = 'https://jsonplaceholder.typicode.com/posts'
+   
   useEffect(() => {
     let data ={
       "name": "Juan",
@@ -23,15 +26,13 @@ const Home = () => {
     };
     axios.post(API, config)
     .then(function (response:any) {
-      handleUser(response.data.data)
-      console.log(
-    response.data.data
-    );
+      // handleUser(response.data.data)
+      dispatch(actions.setUser(response.data.data))
     })
     .catch(function (error:any) {
       console.log(error);
     }); 
-  }, [handleUser])
+  }, [dispatch])
   return (
     <div>
        <Navbar className='main' />
@@ -48,7 +49,7 @@ const Home = () => {
       <div className='right__container'>
         <h2 className='right__container--title'>Déjanos tus datos</h2>
         <Formulario />
-        {user}
+        {user.email}
       </div>
     </div>
     </div>
