@@ -49,7 +49,6 @@ const Home = () => {
       <div className='right__container'>
         <h2 className='right__container--title'>Déjanos tus datos</h2>
         <Formulario />
-        {user.email}
       </div>
     </div>
     </div>

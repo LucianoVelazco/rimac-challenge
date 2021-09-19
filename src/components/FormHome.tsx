@@ -91,7 +91,6 @@ const Formulario = () => {
           <div className='form__first-container--input'>
             <input type='text' className="form__input" onChange={handleId} placeholder='Nro. de doc'/>
             <p style={{color: 'red'}}>{(idError !== '') && idError}</p>
-
           </div>
         </div>
         <input type='text' className="form__input" onChange={handlePhone} placeholder='Celular' />

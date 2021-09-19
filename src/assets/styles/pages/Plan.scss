@@ -40,6 +40,7 @@
   &__center{
     grid-column: 2 / 2;
     grid-row: 1;
+    padding: 0px 20px ;
     &--goback{
       display: flex;
       align-items: center;
@@ -168,6 +169,7 @@
       }
     }
     &--coverages{
+      width: 384px;
         &--title{
           display: flex;
           width: 226px;
@@ -183,6 +185,7 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
+          margin-bottom: 15px;
           &--elementone{
             font-family: Lato;
             font-style: normal;
@@ -197,6 +200,7 @@
             text-transform: uppercase;
             color: #EF3340;
             margin-top: 32px;
+            padding: 5px 5px;
           }
           &--elementtwo{
             font-family: Lato;
@@ -212,15 +216,79 @@
             text-transform: uppercase;
             color: #494F66;
             margin-top: 32px;
+            padding: 5px 5px;
           } 
         }
     }
   }
-
-  
   &__right{
     grid-column: 3 / 3;
     grid-row: 1;
+    &--amount{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin: 0px 0px 0px 0px;
+      &--title{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+        color: #494F66;
+      }
+      &--price{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 36px;
+        letter-spacing: -0.2px;
+        color: #494F66;
+      }
+      &--month{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: #676F8F;
+      }
+    }
+    &--additions{
+      &--price{
+        font-family: Lato;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.2px;
+        color: #494F66;
+      }
+      &--item{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        img{
+          width: 9.83px;
+          height: 8px;
+          margin-right: 5px ;
+        }
+        p{
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 24px;
+          color: #676F8F;
+
+
+        }
+      }
+    }
   }    
 }
 

@@ -6,7 +6,9 @@ import ActiveIcon  from '../assets/static/Icon_done.png'
 import GoBack from '../assets/static/icon_Back.png'
 import Guy from '../assets/static/Guy.png'
 import Button from '../common/Button';
+import Check from '../assets/static/check.png'
 import '../assets/styles/pages/Plan.scss'
+import ArmaTuPlan from '../components/ArmaTuPlan';
 
 const Plan = () => {
   const history = useHistory()
@@ -67,24 +69,36 @@ const Plan = () => {
               <p className='plan-box__center--coverages--choices--elementtwo'>Protege a los que te rodean</p>
               <p className='plan-box__center--coverages--choices--elementtwo'>Mejora tu plan</p>
             </div>
+            <div>
+              <ArmaTuPlan />
+            </div>
           </div>
         </div>
 
         <div className='plan-box__right'>
-          <div>
-          <p>Monto</p>
-          <h3>Suma</h3>
-          <p>Mensuales</p>  
+          <div className='plan-box__right--amount'>
+          <p className='plan-box__right--amount--title'>Monto</p>
+          <h3 className='plan-box__right--amount--price'>$35</h3>
+          <p className='plan-box__right--amount--month'>Mensuales</p>  
         </div>
-        <div> 
-            <h4>El precio incluye </h4>
+        <div className='plan-box__right--additions'> 
+            <h4 className='plan-box__right--additions--price'>El precio incluye: </h4>
+            <div className='plan-box__right--additions--item'>
+              <img src={Check} alt='check' />
               <p>Llanta de repuesto</p>
-              <p>Llanta de repuesto</p>
-              <p>Llanta de repuesto</p>
+            </div>
+            <div className='plan-box__right--additions--item'>
+              <img src={Check} alt='check' />
+              <p>Analisis de Motor</p>
+            </div>
+            <div className='plan-box__right--additions--item'>
+              <img src={Check} alt='check' />
+              <p>ArosGratis</p>
+            </div>
+            </div>
             <Button  onClickProp={irathanks} className='normal'>
               LO QUIERO
             </Button>
-            </div>
         </div>
     </div>
     </div>

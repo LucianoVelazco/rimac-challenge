@@ -1,0 +1,63 @@
+.armatuplan-container{
+  display: grid;
+  grid-column: repeat(1, 1fr);
+  &__option{
+    display: flex;
+    
+    &--img{
+      width: 48px;
+      height: 48px;
+      margin-top: 32px;
+      margin-right: 24px;
+    }
+    &--description{
+    display: flex;
+    flex-direction: column;
+      &--titleandicon{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        h3{
+          font-family: Lato;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 20px;
+          line-height: 28px;
+          color: #494F66;
+        }
+        img{
+          width: 15.5px;
+          height: 8.5px;
+        }
+      }
+      &--text{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        color: #676F8F;
+
+      }
+      &--addremove{
+          display: flex;
+          align-items: center;
+          img{
+            margin-right: 12px;
+            width: 24px;
+            height: 24px;
+          }
+          p{
+            font-family: Lato;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 16px;          
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            color: #6F7DFF;
+          }
+      }
+    }
+  }
+}
