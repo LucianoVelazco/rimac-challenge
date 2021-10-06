@@ -79,10 +79,10 @@ const Formulario = () => {
             <p onClick={() =>setDropdown(!dropdown)}>{type}</p>
             {
               dropdown &&
-              <div className='form__first-container--dropwdown--float'>
+              <div>
                 {
                   items.map(item => (
-                    <p onClick={()=> handleType(item)} key={item}>{item}</p>
+                    <p className='form__first-container--dropwdown--float' onClick={()=> handleType(item)} key={item}>{item}</p>
                   ))
                 }
               </div>

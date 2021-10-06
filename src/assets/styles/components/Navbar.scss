@@ -14,29 +14,44 @@
   position: relative;
   background-color: white;
   z-index: 1;
-  
+  @media (max-width: 800px) {
+    display: flex;
+    justify-content: center;
+    
+  }
 }
-
-
 .navbar__logo{
   width: 99px;
   height: 16px;
   margin: 24px 120px;
-}
 
+}
 .navbar__contact{
   display: flex;
   margin: 24px 120px;
+  justify-content: space-between;
+  align-items: center;
   color:#6F7DFF;
-  &----doubt{
-    color:#676F8F;
-    margin-right: 41px;
-    padding:10px 10px;
-    display: inline;
+  &--desktop{
+    display: flex;
+  }
+  &--doubt{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &--items{
+      color:#676F8F;
+      margin-right: 41px;
+      padding:10px 10px;
+    }
   }
    &--phone{
     color: #6F7DFF;
-    padding:10px 10px
+    &--responsive{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
   &--phone--number{
     display: inline;

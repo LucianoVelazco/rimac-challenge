@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import Navbar  from '../components/Navbar'
 import InactiveIcon from '../assets/static/Icon_dissable.png'
@@ -7,10 +7,23 @@ import GoBack from '../assets/static/icon_Back.png'
 import Guy from '../assets/static/Guy.png'
 import Button from '../common/Button';
 import Check from '../assets/static/check.png'
+import MinusIcon from '../assets/static/Minusicon.png';
+import PlusIcon from '../assets/static/PlusIcon.png';
 import '../assets/styles/pages/Plan.scss'
 import ArmaTuPlan from '../components/ArmaTuPlan';
 
 const Plan = () => {
+  const [priceCar, SetPriceCar] = useState(14300)
+  const addPlus = () => {
+    if(priceCar < 16500) {
+      SetPriceCar(priceCar + 100)
+    }
+  }
+  const addMinus = () => {
+    if(priceCar > 12500) {
+      SetPriceCar(priceCar - 100)
+    }
+  }
   const history = useHistory()
   function irathanks () {
     history.push('/thanks')
@@ -57,7 +70,9 @@ const Plan = () => {
                 </div>
               </div>
               <div className='plan-box__center--insurance--add'>
-                <p>Monto</p>
+                <img src={MinusIcon} alt='minusicon' onClick={addMinus} />
+                <p>${(new Intl.NumberFormat().format(priceCar))}</p>
+                <img src={PlusIcon} alt='minusicon' onClick={addPlus} />
               </div>
             </div>
           <div className='plan-box__center--coverages'>
